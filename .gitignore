@@ -1,0 +1,38 @@
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+
+# Python cache and tooling
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.venv/
+venv/
+
+# Uploaded documents and application runtime data
+/data/
+*.pdf
+*.sqlite
+*.sqlite3
+*.db
+*.parquet
+*.bin
+chroma/
+chroma_db/
+vector_db/
+uploads/
+cache/
+tmp/
+temp/
+*.log
+*.tmp
+*.temp
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
