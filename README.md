@@ -36,9 +36,12 @@ streamlit run app.py
 
 The default model is `nvidia/nemotron-3-super-120b-a12b`. Copy `.env.example` to `.env` and add a valid NVIDIA API key locally. Do not use a committed example file for credentials.
 
-## Notes
+## Reliability & Safety
 
-- Do not commit secrets to Git.
-- The system requires evidence before answering document-specific questions.
-- If no LLM API key is configured, the app uses a marked evidence-based local fallback rather than silently claiming the NVIDIA model answered.
-- Configured NVIDIA API errors are reported to the user and are not silently disguised as successful model answers.
+DocMind follows an evidence-first approach:
+
+- Sensitive credentials are never stored in the public repository.
+- Document-specific answers are generated only when relevant evidence is available.
+- Source documents and page references are preserved wherever possible.
+- If the NVIDIA LLM is unavailable, DocMind clearly indicates when a local fallback is being used.
+- NVIDIA API failures are reported transparently rather than being presented as successful AI-generated answers.
